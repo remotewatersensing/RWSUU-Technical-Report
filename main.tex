@@ -1,0 +1,59 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{markdown}
+\usepackage{mathtools}
+\usepackage{wrapfig}
+\usepackage{tabu}
+\usepackage{colortbl}
+\usepackage[backend=biber]{biblatex}
+\usepackage{adjustbox}
+\usepackage[toc]{glossaries}
+
+\pgfplotsset{compat=1.14}
+\addbibresource{000_bib/pp.bib}
+\addbibresource{000_bib/dr.bib}
+\addbibresource{000_bib/prr.bib}
+\addbibresource{000_bib/frr.bib}
+\renewcommand\UrlFont{\color{blue}\rmfamily}
+\newcommand{\comment}[1]{}
+\title{Technical Report\\Remote Water Sensing using UAVs}
+\author{Robin \textsc{Westerik}}
+\newcommand{\supervisors}{Ronald \textsc{Tangelder}\\Harry \textsc{Futselaar}}
+\newcommand{\timePeriod}{February 2022 - June 2022}
+\newcommand{\homepage}{\url{https://github.com/organizations/remotewatersensing/}}
+\date{\today}
+\makeatletter{}
+
+\makeglossaries
+
+\begin{document}
+\input{glossary}
+\input{title}
+
+\input{010_foreword/00_main}
+\input{020_summary/00_main}
+\newpage
+\tableofcontents
+\newpage
+
+\sffamily\footnotesize
+\printglossary[title=Abbreviations, toctitle=Abbreviations]
+\rmfamily\normalsize
+\newpage
+\listoffigures
+
+\input{030_introduction/00_main}
+\input{040_background/00_main}
+\input{050_scope/00_main}
+\input{060_approach/00_main}
+\input{070_design/00_main}
+\input{080_testing/00_main}
+\input{090_conclusion/00_main}
+
+\newpage
+\printbibliography
+
+\end{document}

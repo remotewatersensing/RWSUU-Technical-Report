@@ -1,0 +1,44 @@
+\newpage
+\subsubsection{Temperature}
+As mentioned in the Design Report, the DFRobot DFR0198/DS18B20 \cite{DFR0198} waterproof sensor was chosen to measure the temperature. Temperature readings of the water are both recorded and used to help determining the acidity and conductivity.
+
+\begin{table}[h!]
+	\centering
+	\adjustimage{height=4cm,valign=c}{080_testing/sensors/31_dfr0198.jpg}\quad
+	\begin{tabular}{| l | l |}
+    \hline
+    Protocol & 1-Wire\\
+    Measurement Range & -10-85 ℃ \\
+    Measurement Accuracy &  0.5 ℃ \\
+    Response time & Within 750ms \\
+    Supply Voltage & 3.3V-5V \\
+    Software library included & yes \\
+    Availability & 3-5 Working Days \\
+    \hline
+	\end{tabular}
+\end{table}
+
+Temperature readings are compared from the Hanna pH sensor and the DFRobot DS18B20 sensor. The Hanna sensor has an accuracy of 1℃ and the DFRobot sensor has an accuracy of 0.5 ℃  The results can be seen in the graph below.
+
+\begin{figure}[h!]
+\caption{Comparison between Hanna and DFRobot}
+\begin{tikzpicture}
+\begin{axis}[
+axis lines=middle,
+ymin=0,
+x label style={at={(current axis.right of origin)},anchor=north, below=10mm},
+legend style={at={(1,0.1)},anchor=east},
+ymin=29, ymax=33,
+    xlabel=Samples,
+  ylabel=°C,
+   enlargelimits = true,
+  xticklabels from table={temp.dat}{Sample},xtick=data]
+\addplot[orange,thick,mark=square*] table [y=Hanna,x=X]{temp.dat};
+\addlegendentry{Hanna}
+\addplot[green,thick,mark=square*] table [y= DFRobot,x=X]{temp.dat};
+\addlegendentry{DFRobot}]
+\end{axis}
+\end{tikzpicture}
+\end{figure}
+
+As seen in the graph above, all samples could fall within both error ranges. As the Hanna sensor has a temperature accuracy of only 1℃ it is not possible to determine whether the DFRobot sensor is acting

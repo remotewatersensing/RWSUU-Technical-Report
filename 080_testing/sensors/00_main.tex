@@ -1,0 +1,20 @@
+\input{080_testing/sensors/data}
+\subsection{Sensors}
+
+The sensor package on the drone is equipped with a turbidity, conductivity, and acidity meter. A minimum accuracy and range requirement for these sensors will be established based on an use case provided by PERNAM \gls{JSC}. Accuracy of these parameters will be measured both in the laboratory and in practice. All sensors are calibrated accordingly beforehand. A full morphological overview of the sensors can be found in the preliminary research report (Appendix A)
+
+\subsubsection{Use case} \label{sensors:usecase}
+
+PERNAM \gls{JSC} wishes to use an \gls{UAV} that has the capability to measure the turbidity, conductivity, and acidity around their water filtration plants in hopes to detect anomalies in the water input early on. For the system to be useful, they have listed some accuracy requirements as follows:
+
+\begin{description}
+   \item[Acidity] 2\% of full scale range so +/- 0.3pH
+   \item[Conductivity] 5\% of full scale range so +/- 5ms/cm
+   \item[Turbidity] 5\% of full scale range so +/- 150NTU
+\end{description}
+
+As seen in the tests below, the chosen sensors are accurate enough for PERNAM's use case.
+
+\input{080_testing/sensors/10_acidity}
+\input{080_testing/sensors/20_conductivity}
+\input{080_testing/sensors/30_temperature}
