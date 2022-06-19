@@ -1,6 +1,6 @@
 \newpage
 \subsection{Software}
-Throughout the project, software was developed to aid in the electronic logging of water quality parameters. In this section, an overview of these software projects will be given
+Throughout the project, software was developed to aid in the electronic logging of water quality parameters. In this section, an overview of these software projects will be given. Script have been made in the Go programming language. This is due to the project producer having a lot of experience in Go and it being an excellent readable language for dealing with explicitly typed data.
 
 \subsubsection{MCU Firmware}
 As previously mentioned in \ref{mcu}, the Arduino environment was chosen to program the ATMega328P. The Arduino environment uses a C/C++ library which makes common input/output operations easier than writing the firmware "Bare-metal".\\
@@ -29,7 +29,7 @@ The SD library is used to log the sensor values to the \gls{SD} card. An attempt
 \caption{Data structure of binary file}
 \end{figure}
 
-A new .DAT file with an unique filename is created on each boot. Entries are placed next to each other in the file. A Golang\cite{golang} script has been made on the computer to convert the binary files to the desired \gls{CSV} format. \cite{dat2csv}
+A new .DAT file with an unique filename is created on each boot. Entries are placed next to each other in the file. A Go \cite{golang} script has been made on the computer to convert the binary files to the desired \gls{CSV} format. \cite{dat2csv}
 
 \paragraph{Sensors}
 
@@ -49,7 +49,7 @@ A web interface has been created using ThingsBoard \cite{thingsboard} to visuali
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.3]{070_design/software/63_dashboard.png}
-\caption{Dashboard}
+\caption{Dashboard [own picture]}
 \end{figure}
 
 The communication of the sensor package and the drone is illustrated as follows:
@@ -57,7 +57,7 @@ The communication of the sensor package and the drone is illustrated as follows:
 \begin{figure}[h]
 \centering
 \includegraphics[scale=1]{070_design/software/62_comms.png}
-\caption{Communication from sensor package to ThingsBoard}
+\caption{Communication from sensor package to ThingsBoard [own edit from \cite{splashdronemanual}]}
 \end{figure}
 
 As one can see, the sensor package has a serial connection with the drone. The drone wirelessly passes through this serial connection to the remote controller. The data structure of the data passing through is the same as the data structure of each entry in the binary file on the SD Card, with a start bit added to indicate the beginning of the transmission. The remote controller has in turn a serial connection with the computer, and the computer is running a Golang script \cite{rwsuucontroller} to listen to this serial connection and pass this information to ThingsBoard.
